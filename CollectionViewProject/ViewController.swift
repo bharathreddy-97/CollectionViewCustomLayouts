@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,PinterestLayoutDelegate,UICollectionViewDelegate,UICollectionViewDataSource
 {
-
+    //checking git
     @IBOutlet weak var mCollectionView: UICollectionView!
     let twoColors:[UIColor] = [UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue]
     
