@@ -46,7 +46,7 @@ class PinterestLayout: UICollectionViewLayout
     var xCellSpacing:CGFloat = 0
     var yCellSpacing:CGFloat = 0
     
-    private var cache = [UICollectionViewLayoutAttributes]()
+    private var cache = [PinterestLayoutAttributes]()
     private var contentHeight:CGFloat = 0
     private var width:CGFloat{
         get{
@@ -57,6 +57,7 @@ class PinterestLayout: UICollectionViewLayout
     override var collectionViewContentSize: CGSize{
         return CGSize(width:width,height:contentHeight)
     }
+    
     
     override func prepare() {
         if cache.isEmpty{
@@ -83,11 +84,12 @@ class PinterestLayout: UICollectionViewLayout
                 
                 let indexpath = IndexPath.init(item: item, section: 0)
                 
-                let photoHeight = delegate.collectionView(collectionView: collectionView!, heightForPhotoAtIndexPath: indexpath, withWidth: width - 2*xInset)
-                let annotationHeight = delegate.collectionView(collectionView: collectionView!, heightForAnnotationAtIndexPath: indexpath, withWidth: width - 2*xInset)
+                let photoHeight = delegate.collectionView(collectionView: collectionView!, heightForPhotoAtIndexPath: indexpath, withWidth: (width/CGFloat(numberOfColumns)) - 2*xInset)
+                let annotationHeight = delegate.collectionView(collectionView: collectionView!, heightForAnnotationAtIndexPath: indexpath, withWidth: (width/CGFloat(numberOfColumns)) - 2*xInset)
                 let height = yInset*2+photoHeight+annotationHeight
                 let frame = CGRect.init(x: xOffsets[column], y: yOffsets[column], width: columnWidth, height: height)
-                let attributes = UICollectionViewLayoutAttributes.init(forCellWith: indexpath)
+                let attributes = PinterestLayoutAttributes.init(forCellWith: indexpath)
+                attributes.photoHeight = photoHeight
                 attributes.frame = frame
                 cache.append(attributes)
                 contentHeight = max(contentHeight, frame.maxY)
@@ -95,6 +97,11 @@ class PinterestLayout: UICollectionViewLayout
                 column = column >= (numberOfColumns - 1) ? 0 : column+1
             }
         }
+    }
+    
+    override class var layoutAttributesClass:AnyClass
+    {
+        return PinterestLayoutAttributes.self
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]?

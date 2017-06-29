@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController,PinterestLayoutDelegate,UICollectionViewDelegate,UICollectionViewDataSource
 {
     //checking git
     @IBOutlet weak var mCollectionView: UICollectionView!
+    let photos:[UIImage] = [#imageLiteral(resourceName: "kidImage.jpeg"),#imageLiteral(resourceName: "kidImage2.jpg"),#imageLiteral(resourceName: "login-bg.png"),#imageLiteral(resourceName: "Simulator Screen Shot 19-Jun-2017, 2.45.01 PM.png"),#imageLiteral(resourceName: "kidImage.jpeg"),#imageLiteral(resourceName: "kidImage2.jpg"),#imageLiteral(resourceName: "login-bg.png"),#imageLiteral(resourceName: "Simulator Screen Shot 19-Jun-2017, 2.45.01 PM.png"),#imageLiteral(resourceName: "kidImage.jpeg"),#imageLiteral(resourceName: "kidImage2.jpg"),#imageLiteral(resourceName: "login-bg.png"),#imageLiteral(resourceName: "Simulator Screen Shot 19-Jun-2017, 2.45.01 PM.png"),#imageLiteral(resourceName: "kidImage.jpeg"),#imageLiteral(resourceName: "kidImage2.jpg"),#imageLiteral(resourceName: "login-bg.png"),#imageLiteral(resourceName: "Simulator Screen Shot 19-Jun-2017, 2.45.01 PM.png"),#imageLiteral(resourceName: "kidImage.jpeg"),#imageLiteral(resourceName: "kidImage2.jpg"),#imageLiteral(resourceName: "login-bg.png"),#imageLiteral(resourceName: "Simulator Screen Shot 19-Jun-2017, 2.45.01 PM.png")]
+    let captions:[String] = ["Muggle Harry Potter","Uninterested Student","Interested students","Some Simulator shit image","Muggle Harry Potter","Uninterested Student","Interested students","Some Simulator shit image","Muggle Harry Potter","Uninterested Student","Interested students","Some Simulator shit image","Muggle Harry Potter","Uninterested Student","Interested students","Some Simulator shit image","Muggle Harry Potter","Uninterested Student","Interested students","Some Simulator shit image"]
     //let twoColors:[UIColor] = [UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue,UIColor.red,UIColor.blue]
     
     override func viewDidLoad() {
@@ -37,16 +40,22 @@ class ViewController: UIViewController,PinterestLayoutDelegate,UICollectionViewD
         return 60
     }
     func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath, withWidth width: CGFloat) -> CGFloat {
-        let random = arc4random_uniform(4) + 1
-        return CGFloat(random) * 100
+        let photo = photos[indexPath.item]
+        let photoWidth = photo.size.width
+        let photoHeight = photo.size.height
+        
+        let aspectRatio = photoWidth/photoHeight
+        return width/aspectRatio
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return self.photos.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PinterestCell
         //cell.backgroundColor = twoColors[indexPath.row]
+        cell.mImageView.image = photos[indexPath.item]
+        cell.mCaptionLabel.text = captions[indexPath.item]
         return cell
     }
 
