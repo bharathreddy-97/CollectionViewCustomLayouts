@@ -14,6 +14,7 @@ class PinterestCell: UICollectionViewCell {
     @IBOutlet weak var mImageView: UIImageView!
     
     
+    @IBOutlet weak var mCommentLabel: UILabel!
     @IBOutlet weak var mCaptionLabel: UILabel!
     @IBOutlet weak var mImageViewHeightConstraint: NSLayoutConstraint!
     

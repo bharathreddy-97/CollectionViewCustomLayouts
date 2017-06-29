@@ -60,6 +60,16 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		58723ADB1F04EC0D004950EC /* PinterestLayout */ = {
+			isa = PBXGroup;
+			children = (
+				58B06ADF1EB7A4BF00EAEFA7 /* PinterestLayout.swift */,
+				580DC6BA1EBCCB1100FCA93F /* RoundedCornerView.swift */,
+				58CB6E6E1EBCD2B2008F4463 /* PinterestCell.swift */,
+			);
+			name = PinterestLayout;
+			sourceTree = "<group>";
+		};
 		58B06AC11EB7A3BF00EAEFA7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		58B06ACC1EB7A3C000EAEFA7 /* CollectionViewProject */ = {
 			isa = PBXGroup;
 			children = (
+				58723ADB1F04EC0D004950EC /* PinterestLayout */,
 				58723AD21F04E250004950EC /* Resources */,
 				58B06ACD1EB7A3C000EAEFA7 /* AppDelegate.swift */,
 				58B06ACF1EB7A3C000EAEFA7 /* ViewController.swift */,
@@ -86,9 +97,6 @@
 				58B06AD41EB7A3C000EAEFA7 /* Assets.xcassets */,
 				58B06AD61EB7A3C000EAEFA7 /* LaunchScreen.storyboard */,
 				58B06AD91EB7A3C000EAEFA7 /* Info.plist */,
-				58B06ADF1EB7A4BF00EAEFA7 /* PinterestLayout.swift */,
-				580DC6BA1EBCCB1100FCA93F /* RoundedCornerView.swift */,
-				58CB6E6E1EBCD2B2008F4463 /* PinterestCell.swift */,
 			);
 			path = CollectionViewProject;
 			sourceTree = "<group>";

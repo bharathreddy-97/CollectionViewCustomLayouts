@@ -29,7 +29,7 @@
                                         <rect key="frame" x="48.5" y="0.0" width="278" height="239"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="278" height="239"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="279" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00g-ij-lyQ" customClass="RoundedCornerView" customModule="CollectionViewProject" customModuleProvider="target">
@@ -48,6 +48,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xe6-09-nLQ">
+                                                            <rect key="frame" x="0.5" y="239" width="278" height="0.0"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.3173988163" green="0.61005860570000003" blue="0.41715959819999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -55,8 +61,11 @@
                                                         <constraint firstAttribute="bottom" secondItem="fVC-Tt-3pd" secondAttribute="bottom" constant="10" id="IPO-VP-V2e"/>
                                                         <constraint firstItem="p6N-3n-BZf" firstAttribute="leading" secondItem="00g-ij-lyQ" secondAttribute="leading" id="Uui-Sv-PMF"/>
                                                         <constraint firstItem="fVC-Tt-3pd" firstAttribute="top" secondItem="p6N-3n-BZf" secondAttribute="bottom" constant="10" id="WpB-gC-dJf"/>
+                                                        <constraint firstItem="Xe6-09-nLQ" firstAttribute="top" secondItem="fVC-Tt-3pd" secondAttribute="bottom" constant="10" id="aWN-zZ-tdg"/>
                                                         <constraint firstAttribute="trailing" secondItem="p6N-3n-BZf" secondAttribute="trailing" id="kXq-hq-vcI"/>
                                                         <constraint firstItem="fVC-Tt-3pd" firstAttribute="centerX" secondItem="00g-ij-lyQ" secondAttribute="centerX" id="qUQ-Xa-OYH"/>
+                                                        <constraint firstItem="Xe6-09-nLQ" firstAttribute="width" secondItem="p6N-3n-BZf" secondAttribute="width" id="rPQ-FL-0aH"/>
+                                                        <constraint firstItem="Xe6-09-nLQ" firstAttribute="centerX" secondItem="fVC-Tt-3pd" secondAttribute="centerX" id="ucB-6K-4qe"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -75,6 +84,7 @@
                                         <size key="customSize" width="278" height="239"/>
                                         <connections>
                                             <outlet property="mCaptionLabel" destination="fVC-Tt-3pd" id="FNm-dI-g3o"/>
+                                            <outlet property="mCommentLabel" destination="Xe6-09-nLQ" id="B6k-5g-LFL"/>
                                             <outlet property="mImageView" destination="p6N-3n-BZf" id="bkE-gr-R42"/>
                                             <outlet property="mImageViewHeightConstraint" destination="qP0-52-Css" id="0Ml-Nb-sYj"/>
                                         </connections>
