@@ -23,17 +23,51 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vzc-4R-UxN">
                                 <rect key="frame" x="0.0" y="-0.5" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="u1d-Ox-KFF" customClass="PinterestLayout" customModule="CollectionViewProject" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="pRg-WV-zUq">
-                                        <rect key="frame" x="0.0" y="0.0" width="161" height="138"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="pRg-WV-zUq" customClass="PinterestCell" customModule="CollectionViewProject" customModuleProvider="target">
+                                        <rect key="frame" x="48.5" y="0.0" width="278" height="239"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="161" height="138"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="278" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00g-ij-lyQ" customClass="RoundedCornerView" customModule="CollectionViewProject" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="278" height="239"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p6N-3n-BZf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="278" height="200"/>
+                                                            <color key="backgroundColor" red="0.10980392160000001" green="0.58823529409999997" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="200" id="qP0-52-Css"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="p6N-3n-BZf" firstAttribute="top" secondItem="00g-ij-lyQ" secondAttribute="top" id="I4C-lG-md5"/>
+                                                        <constraint firstItem="p6N-3n-BZf" firstAttribute="leading" secondItem="00g-ij-lyQ" secondAttribute="leading" id="Uui-Sv-PMF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="p6N-3n-BZf" secondAttribute="trailing" id="kXq-hq-vcI"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
                                         </view>
-                                        <size key="customSize" width="161" height="138"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="00g-ij-lyQ" secondAttribute="bottom" id="56C-m7-neY"/>
+                                            <constraint firstItem="00g-ij-lyQ" firstAttribute="top" secondItem="pRg-WV-zUq" secondAttribute="top" id="K0c-DM-Eah"/>
+                                            <constraint firstAttribute="trailing" secondItem="00g-ij-lyQ" secondAttribute="trailing" id="pLC-VN-ofK"/>
+                                            <constraint firstItem="00g-ij-lyQ" firstAttribute="leading" secondItem="pRg-WV-zUq" secondAttribute="leading" id="r5e-iV-TuK"/>
+                                        </constraints>
+                                        <size key="customSize" width="278" height="239"/>
+                                        <connections>
+                                            <outlet property="mImageView" destination="p6N-3n-BZf" id="bkE-gr-R42"/>
+                                            <outlet property="mImageViewHeightConstraint" destination="qP0-52-Css" id="0Ml-Nb-sYj"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
